@@ -19,7 +19,7 @@ def data():
 def model():
     """Fixture to load the trained model."""
     try:
-        return joblib.load('artifacts/model.pkl')
+        return joblib.load('artifacts/model/model.pkl')
     except FileNotFoundError:
         pytest.fail("The model file 'models/model.joblib' was not found. Please train the model first.")
 
