@@ -15,7 +15,7 @@ import requests
 import sys
 
 
-mlflow.set_tracking_uri("http://104.197.123.197:5000")
+mlflow.set_tracking_uri("http://34.132.101.61:5000/")
 mlflow.sklearn.autolog(
     max_tuning_runs=15,
     registered_model_name="iris-tree-classifier"
@@ -49,28 +49,7 @@ with mlflow.start_run(run_name="DecisionTree Classifier Hyperparameter Tuning"):
     print(f"Test Score for Model: {best_score:.3f}")
     
 
-git_token = os.environ.get("GITHUB_PAT")
-owner = "TanishqSingh-TS"
-repo = "mlops-week-5-assignment-testing"
-event_type = "model-trained"
 
-url = f"https://api.github.com/repos/{owner}/{repo}/dispatches"
-headers = {
-    "Accept": "application/vnd.github.v3+json",
-    "Authorization": f"token {git_token}",
-}
-data = {
-    "event_type": event_type
-}
-
-try:
-    response = requests.post(url, json=data, headers=headers)
-    if response.status_code == 204:
-        print("GitHub Action Workflow Is Successfully Triggered")
-    else:
-        print(f"Failed Status: {response.status_code}, Response: {response.text}")
-except Exception as e:
-    print(f"Error running GitHub Action: {e}")
 
 
     
