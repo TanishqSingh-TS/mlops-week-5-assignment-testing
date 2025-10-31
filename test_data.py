@@ -23,6 +23,13 @@ def model():
     except FileNotFoundError:
         pytest.fail("The model file 'models/model.joblib' was not found. Please train the model first.")
 
+@pytest.fixture(scope='session')
+def test_data():
+    """Fixture to load the test data."""
+    try:
+        return pd.read_csv('data/iris.csv')
+    except FileNotFoundError:
+        pytest.fail("The test data file 'data/iris.csv' was not found.")
 
 # =================================================================
 # == Data Validation Tests (Pre-Training)
