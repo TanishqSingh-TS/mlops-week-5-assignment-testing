@@ -5,7 +5,7 @@ MODEL_NAME = "iris-tree-classifier"
 SAVE_PATH = "artifacts"
 
 
-mlflow.set_tracking_uri("http://104.197.123.197:5000")
+mlflow.set_tracking_uri("http://34.132.101.61:5000/")
 client = mlflow.tracking.MlflowClient()
 
 versions = client.search_model_versions(
