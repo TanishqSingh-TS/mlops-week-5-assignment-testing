@@ -36,7 +36,7 @@ param_grid = {
     'max_depth': [None, 5, 10, 20, 30],
     'min_samples_split': [2, 5, 10],
     'min_samples_leaf': [1, 2, 4],
-    'max_features': [None, 'sqrt', 'log2']
+    'max_features': [None, 'sqrt', 'log2'],
     'class_weights':[None,'balanced']
 }
 
