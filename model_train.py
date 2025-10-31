@@ -6,7 +6,6 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.tree import DecisionTreeClassifier
-from google.cloud import aiplatform
 from datetime import datetime
 import joblib
 from zoneinfo import ZoneInfo
